@@ -22,7 +22,7 @@
 	nvidia,dtsfilename = __FILE__;
 	nvidia,dtbbuildtime = __DATE__, __TIME__;
 
-	host1x {
+	host1x@13e00000 {
 		dsi {
 			nvidia,active-panel = <&null_dsi>;
 			null_dsi: panel-null-dsi-hotplug {

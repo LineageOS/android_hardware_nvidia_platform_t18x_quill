@@ -21,21 +21,23 @@
 / {
 	nvidia,dtsfilename = __FILE__;
 
-	host1x {
-		nvdisplay@15200000 {
-			status = "okay";
-			nvidia,dc-or-node = "/host1x/sor1";
-			nvidia,dc-connector = <&sor1>;
-		};
-		nvdisplay@15210000 {
-			status = "disabled";
-			nvidia,dc-or-node = "/host1x/dsi";
-			nvidia,dc-connector = <&dsi>;
-		};
-		nvdisplay@15220000 {
-			status = "disabled";
-			nvidia,dc-or-node = "/host1x/sor";
-			nvidia,dc-connector = <&sor0>;
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				status = "okay";
+				nvidia,dc-or-node = "/host1x/sor1";
+				nvidia,dc-connector = <&sor1>;
+			};
+			display@15210000 {
+				status = "disabled";
+				nvidia,dc-or-node = "/host1x/dsi";
+				nvidia,dc-connector = <&dsi>;
+			};
+			display@15220000 {
+				status = "disabled";
+				nvidia,dc-or-node = "/host1x/sor";
+				nvidia,dc-connector = <&sor0>;
+			};
 		};
 	};
 };

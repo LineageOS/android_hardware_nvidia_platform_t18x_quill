@@ -19,7 +19,7 @@
 / {
 	nvidia,dtsfilename = __FILE__;
 
-	host1x {
+	host1x@13e00000 {
 		vi@15700000 {
 			num-channels = <4>;
 			ports {

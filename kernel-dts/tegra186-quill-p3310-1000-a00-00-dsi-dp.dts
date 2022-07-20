@@ -21,14 +21,16 @@
 / {
 	nvidia,dtsfilename = __FILE__;
 
-	host1x {
-		nvdisplay@15210000 {
-			nvidia,dc-or-node = "/host1x/sor";
-			nvidia,dc-connector = <&sor0>;
-		};
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15210000 {
+				nvidia,dc-or-node = "/host1x/sor";
+				nvidia,dc-connector = <&sor0>;
+			};
 
-		nvdisplay@15220000 {
-			status = "disabled";
+			display@15220000 {
+				status = "disabled";
+			};
 		};
 
 		sor {

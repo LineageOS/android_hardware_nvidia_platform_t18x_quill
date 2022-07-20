@@ -23,7 +23,7 @@
 	nvidia,dtsfilename = __FILE__;
 	nvidia,dtbbuildtime = __DATE__, __TIME__;
 
-	host1x {
+	host1x@13e00000 {
 		vi_base: vi@15700000 {
 			ports {
 				imx274_vi_port0: port@0 {

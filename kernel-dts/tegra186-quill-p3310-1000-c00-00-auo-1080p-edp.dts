@@ -44,14 +44,16 @@
 		};
 	};
 
-	host1x {
+	host1x@13e00000 {
 
-		nvdisplay@15200000 {
-			status = "okay";
-			vdd_lcd_bl_en-supply = <&vdd_lcd_bl_en>; /* GPIO_DIS3 / LCD_BL_EN for eDP */
-			nvidia,dc-or-node = "/host1x/sor";
-			nvidia,dc-connector = <&sor0>;
-			vdd_ds_1v8-supply = <&en_vdd_disp_1v8>;
+		display-hub@15200000 {
+			display@15200000 {
+				status = "okay";
+				vdd_lcd_bl_en-supply = <&vdd_lcd_bl_en>; /* GPIO_DIS3 / LCD_BL_EN for eDP */
+				nvidia,dc-or-node = "/host1x/sor";
+				nvidia,dc-connector = <&sor0>;
+				vdd_ds_1v8-supply = <&en_vdd_disp_1v8>;
+                	};
                 };
 
 		sor {

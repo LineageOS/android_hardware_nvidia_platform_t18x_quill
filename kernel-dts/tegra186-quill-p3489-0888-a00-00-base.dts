@@ -245,7 +245,7 @@
 		status = "disabled";
 	};
 
-	host1x {
+	host1x@13e00000 {
 		disp_imp_table {
 			num_settings = <7>;
 
@@ -307,12 +307,14 @@
 			};
 		};
 
-		nvdisplay@15200000 {
-			status = "disabled";
-		};
+		display-hub@15200000 {
+			display@15200000 {
+				status = "disabled";
+			};
 
-		nvdisplay@15220000 {
-			status = "disabled";
+			display@15220000 {
+				status = "disabled";
+			};
 		};
 	};
 

@@ -21,21 +21,23 @@
 / {
 	nvidia,dtsfilename = __FILE__;
 
-	host1x {
-		nvdisplay@15200000 {
-			nvidia,fb-win = <0>;
-			win-mask = <0x3>;
-		};
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				nvidia,fb-win = <0>;
+				win-mask = <0x3>;
+			};
 
-		nvdisplay@15210000 {
-			nvidia,fb-win = <2>;
-			win-mask = <0xC>;
-		};
+			display@15210000 {
+				nvidia,fb-win = <2>;
+				win-mask = <0xC>;
+			};
 
-		nvdisplay@15220000 {
-			bootloader-status = "okay";
-			nvidia,fb-win = <4>;
-			win-mask = <0x30>;
+			display@15220000 {
+				bootloader-status = "okay";
+				nvidia,fb-win = <4>;
+				win-mask = <0x30>;
+			};
 		};
 
 		sor {

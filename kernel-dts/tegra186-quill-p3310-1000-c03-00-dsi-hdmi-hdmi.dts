@@ -21,32 +21,34 @@
 	nvidia,dtsfilename = __FILE__;
 	nvidia,dtbbuildtime = __DATE__, __TIME__;
 
-	host1x {
-		nvdisplay@15200000 {
-			status = "okay";
-			win-mask = <0x7>;
-			nvidia,fb-win = <0x0>;
-			nvidia,dc-or-node = "/host1x/dsi";
-		};
-		nvdisplay@15210000 {
-			status = "okay";
-			win-mask = <0x18>;
-			nvidia,fb-win = <0x3>;
-			nvidia,dc-or-node = "/host1x/sor1";
-		};
-		nvdisplay@15220000 {
-			status = "okay";
-			win-mask = <0x20>;
-			nvidia,fb-win = <0x5>;
-			nvidia,dc-or-node = "/host1x/sor";
-			/delete-property/ vdd-dp-pwr-supply;
-			/delete-property/ avdd-dp-pll-supply;
-			/delete-property/ vdd-edp-sec-mode-supply;
-			/delete-property/ vdd-dp-pad-supply;
-			/delete-property/ vdd_hdmi_5v0-supply;
-			avdd_hdmi-supply = <&spmic_ldo7>;
-			avdd_hdmi_pll-supply = <&spmic_sd2>;
-			vdd_hdmi_5v0-supply = <&vdd_hdmi>;
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				status = "okay";
+				win-mask = <0x7>;
+				nvidia,fb-win = <0x0>;
+				nvidia,dc-or-node = "/host1x/dsi";
+			};
+			display@15210000 {
+				status = "okay";
+				win-mask = <0x18>;
+				nvidia,fb-win = <0x3>;
+				nvidia,dc-or-node = "/host1x/sor1";
+			};
+			display@15220000 {
+				status = "okay";
+				win-mask = <0x20>;
+				nvidia,fb-win = <0x5>;
+				nvidia,dc-or-node = "/host1x/sor";
+				/delete-property/ vdd-dp-pwr-supply;
+				/delete-property/ avdd-dp-pll-supply;
+				/delete-property/ vdd-edp-sec-mode-supply;
+				/delete-property/ vdd-dp-pad-supply;
+				/delete-property/ vdd_hdmi_5v0-supply;
+				avdd_hdmi-supply = <&spmic_ldo7>;
+				avdd_hdmi_pll-supply = <&spmic_sd2>;
+				vdd_hdmi_5v0-supply = <&vdd_hdmi>;
+			};
 		};
 
 		dsi {
